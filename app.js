@@ -7,31 +7,28 @@ const options = {
 };
 
 const getWeather = (city) => {
-    cityName.innerHTML = city;
+  cityName.innerHTML = city;
   fetch(
-    "https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=" + city,
-    options
+    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=49da7703b2d50bab507896f3d5b56a7c`
   )
     .then((response) => response.json())
     .then((response) => {
       console.log(response);
       cloud_pct.innerHTML = response.cloud_pct;
-      temp.innerHTML = response.temp;
+      temp.innerHTML = response.main.temp;
       feels_like.innerHTML = response.feels_like;
       humidity.innerHTML = response.humidity;
-      min_temp.innerHTML = response.min_temp;
-      max_temp.innerHTML = response.max_temp;
+      min_temp.innerHTML = response.main.temp_min;
+      max_temp.innerHTML = response.main.temp_max;
       wind_speed.innerHTML = response.wind_speed;
       wind_degrees.innerHTML = response.wind_degrees;
-      sunrise.innerHTML = response.sunrise;
-      sunset.innerHTML = response.sunset;
     })
     .catch((err) => console.error(err));
 };
 
-submit.addEventListener("click", (e)=>{
-    e.preventDefault()
-    getWeather(city.value)
-})
+submit.addEventListener("click", (e) => {
+  e.preventDefault();
+  getWeather(city.value);
+});
 
-getWeather("Karachi")
+getWeather("Karachi");
