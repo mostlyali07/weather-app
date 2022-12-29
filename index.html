@@ -24,48 +24,9 @@
   </head>
 
   <body>
-    <!-- <div class="container main">
-        <div class="row">
-            <div class="col-md-12 form-inline">
-                <input class="form-control" type="text" placeholder="Search City Name" id="city">
-                <button type="submit" class="btn btn-dark" onclick="getData()">Search</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-7">
-                <i class="fa-solid fa-location-dot"></i>
-                <div class="temp">
-                    <div class="deg" id="deg">21 <span style="font-size: 70px; margin-left: -25px;">&#xb0</span> </div>
-                    <div class="tempName" id="tempName">SMOKE</div>
-                </div>
-                <div id="time"></div>
-                <div class="feelz text-center">
-                    <div class="feelslike">
-                        <p> <i class='fas fa-smog'></i> </p>
-                        <p> <small id="feelslike">75.3&#xb0</small>
-                        </p>
-                            <p>Feels Like</p>
-                    </div>
-                    <div class="humidity">
-                        <p> <i class='fas fa-temperature-high'></i></p>
-                        <p> <small id="humidity">95&#x25</small>
-                        </p>
-                            <p>Humidity</p>
-                    </div>
-                    <div class="wind">
-                        <p><i class='fas fa-wind'></i></p>
-                        <p> <small id="wind">13km/h</small>
-                        </p>
-                            <p>Wind</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-5"></div>
-        </div>
-    </div> -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">Weather App</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -111,8 +72,9 @@
               type="search"
               placeholder="Search"
               aria-label="Search"
+              id="city"
             />
-            <button class="btn btn-outline-success" type="submit">
+            <button class="btn btn-outline-success" type="submit" id="submit">
               Search
             </button>
           </form>
@@ -121,21 +83,23 @@
     </nav>
     <div class="container">
       <main>
+        <h2 class="my-4 text-center">
+          Weather for <span id="cityName"></span>
+        </h2>
         <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
           <div class="col">
             <div class="card mb-4 rounded-3 shadow-sm">
               <div class="card-header py-3">
-                <h4 class="my-0 fw-normal">Free</h4>
+                <h4 class="my-0 fw-normal">Tempretures</h4>
               </div>
               <div class="card-body">
                 <h1 class="card-title pricing-card-title">
                   $0<small class="text-muted fw-light">/mo</small>
                 </h1>
                 <ul class="list-unstyled mt-3 mb-4">
-                  <li>10 users included</li>
-                  <li>2 GB of storage</li>
-                  <li>Email support</li>
-                  <li>Help center access</li>
+                  <li>Temperature PCT is <span id="temp"></span></li>
+                  <li>Min Temperature PCT is <span id="min_temp"></span></li>
+                  <li>Max Temperature PCT is <span id="max_temp"></span></li>
                 </ul>
                 <button
                   type="button"
@@ -149,17 +113,16 @@
           <div class="col">
             <div class="card mb-4 rounded-3 shadow-sm">
               <div class="card-header py-3">
-                <h4 class="my-0 fw-normal">Pro</h4>
+                <h4 class="my-0 fw-normal">Humidity Info</h4>
               </div>
               <div class="card-body">
                 <h1 class="card-title pricing-card-title">
                   $15<small class="text-muted fw-light">/mo</small>
                 </h1>
                 <ul class="list-unstyled mt-3 mb-4">
-                  <li>20 users included</li>
-                  <li>10 GB of storage</li>
-                  <li>Priority email support</li>
-                  <li>Help center access</li>
+                  <li>Cloud PCT is <span id="cloud_pct"></span></li>
+                  <li>Feel Like is <span id="feels_like"></span></li>
+                  <li>Humidity is <span id="humidity"></span></li>
                 </ul>
                 <button type="button" class="w-100 btn btn-lg btn-primary">
                   Get started
@@ -170,17 +133,17 @@
           <div class="col">
             <div class="card mb-4 rounded-3 shadow-sm border-primary">
               <div class="card-header py-3 text-bg-primary border-primary">
-                <h4 class="my-0 fw-normal">Enterprise</h4>
+                <h4 class="my-0 fw-normal">Wind Info</h4>
               </div>
               <div class="card-body">
                 <h1 class="card-title pricing-card-title">
                   $29<small class="text-muted fw-light">/mo</small>
                 </h1>
                 <ul class="list-unstyled mt-3 mb-4">
-                  <li>30 users included</li>
-                  <li>15 GB of storage</li>
-                  <li>Phone and email support</li>
-                  <li>Help center access</li>
+                  <li>Wind Speed is <span id="wind_speed"></span></li>
+                  <li>Wind Degrees is <span id="wind_degrees"></span></li>
+                  <li>Sunrise Time is <span id="sunrise"></span></li>
+                  <li>Sunset Time is <span id="sunset"></span></li>
                 </ul>
                 <button type="button" class="w-100 btn btn-lg btn-primary">
                   Contact us
