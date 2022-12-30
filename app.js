@@ -10,8 +10,8 @@ const getWeather = (city) => {
       temp.innerHTML = (response.main.temp-273.15).toFixed(1);
       feels_like.innerHTML = response.feels_like;
       humidity.innerHTML = response.humidity;
-      min_temp.innerHTML = response.main.temp_min;
-      max_temp.innerHTML = response.main.temp_max;
+      min_temp.innerHTML = (response.main.temp_max-273.15).toFixed(1);
+      max_temp.innerHTML = (response.main.temp_max-273.15).toFixed(1);
       wind_speed.innerHTML = response.wind_speed;
       wind_degrees.innerHTML = response.wind_degrees;
     })
