@@ -12,11 +12,12 @@ const getWeather = (city) => {
       sunset.innerHTML = response.sys.sunset;
       min_temp.innerHTML = (response.main.temp_max - 273.15).toFixed(1);
       max_temp.innerHTML = (response.main.temp_max - 273.15).toFixed(1);
+      main.innerHTML = response.weather[0].main;
       description.innerHTML = response.weather[0].description;
       let locationIcon = document.querySelector(".weather-icon");
       const { icon } = response.weather[0];
       locationIcon.innerHTML = `<img src="https://openweathermap.org/img/wn/${icon}.png"/>`;
-      wind_degrees.innerHTML = response.wind_degrees;
+      wind.innerHTML = response.wind.deg;
     })
     .catch((err) => console.error(err));
 };
