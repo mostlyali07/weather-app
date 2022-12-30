@@ -7,7 +7,7 @@ const getWeather = (city) => {
     .then((response) => {
       console.log(response);
       cloud_pct.innerHTML = response.cloud_pct;
-      temp.innerHTML = response.main.temp;
+      temp.innerHTML = (response.main.temp-273.15).toFixed(1);
       feels_like.innerHTML = response.feels_like;
       humidity.innerHTML = response.humidity;
       min_temp.innerHTML = response.main.temp_min;
