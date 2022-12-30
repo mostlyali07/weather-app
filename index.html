@@ -88,14 +88,14 @@
         </h2>
         <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
           <div class="col">
-            <div class="card mb-4 rounded-3 shadow-sm">
-              <div class="card-header py-3">
+            <div class="card mb-4 rounded-3 shadow-sm bg-dark text-white">
+              <div class="card-header py-3 border-white">
                 <h4 class="my-0 fw-normal">Tempretures</h4>
               </div>
               <div class="card-body">
                 <h1 class="card-title pricing-card-title">
                   <span id="temp"></span
-                  ><small class="text-muted fw-light">°C</small>
+                  ><small>°C</small>
                 </h1>
                 <ul class="list-unstyled mt-3 mb-4">
                   <li>Min Temperature is <span id="min_temp"></span></li>
@@ -105,30 +105,32 @@
             </div>
           </div>
           <div class="col">
-            <div class="card mb-4 rounded-3 shadow-sm">
-              <div class="card-header py-3">
-                <h4 class="my-0 fw-normal">Humidity Info</h4>
+            <div class="card mb-4 rounded-3 shadow-sm bg-dark text-white">
+              <div class="card-header py-3 border-white">
+                <h4 class="my-0 fw-normal">Country Info</h4>
               </div>
               <div class="card-body">
                 <h1 class="card-title pricing-card-title">
-                  <span id="cloud_pct"></span
-                  ><small class="text-muted fw-light">Cloud PCT</small>
+                  <span id="country"></span
+                  >
                 </h1>
                 <ul class="list-unstyled mt-3 mb-4">
-                  <li>Feel Like is <span id="feels_like"></span></li>
-                  <li>Humidity is <span id="humidity"></span></li>
+                  <li>Sunrise is <span id="sunrise"></span></li>
+                  <li>Sunset is <span id="sunset"></span></li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card mb-4 rounded-3 shadow-sm">
-              <div class="card-header py-3">
-                <h4 class="my-0 fw-normal">Wind Info</h4>
+            <div class="card mb-4 rounded-3 shadow-sm bg-dark text-white">
+              <div class="card-header py-3 border-white">
+                <h4 class="my-0 fw-normal">Weather Info</h4>
               </div>
               <div class="card-body">
                 <h1 class="card-title pricing-card-title">
-                  <small class="text-muted fw-light">Cloud PCT</small>
+                  <span id="description"></span>
+                  <!-- <span id="icon"></span> -->
+                  <span class="weather-icon"><img src="" /></span>
                 </h1>
                 <ul class="list-unstyled mt-3 mb-4">
                   <li>Wind Speed is <span id="wind_speed"></span></li>

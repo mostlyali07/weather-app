@@ -6,13 +6,16 @@ const getWeather = (city) => {
     .then((response) => response.json())
     .then((response) => {
       console.log(response);
-      cloud_pct.innerHTML = response.cloud_pct;
-      temp.innerHTML = (response.main.temp-273.15).toFixed(1);
-      feels_like.innerHTML = response.feels_like;
-      humidity.innerHTML = response.humidity;
-      min_temp.innerHTML = (response.main.temp_max-273.15).toFixed(1);
-      max_temp.innerHTML = (response.main.temp_max-273.15).toFixed(1);
-      wind_speed.innerHTML = response.wind_speed;
+      country.innerHTML = response.sys.country;
+      temp.innerHTML = (response.main.temp - 273.15).toFixed(1);
+      sunrise.innerHTML = response.sys.sunrise;
+      sunset.innerHTML = response.sys.sunset;
+      min_temp.innerHTML = (response.main.temp_max - 273.15).toFixed(1);
+      max_temp.innerHTML = (response.main.temp_max - 273.15).toFixed(1);
+      description.innerHTML = response.weather[0].description;
+      let locationIcon = document.querySelector(".weather-icon");
+      const { icon } = response.weather[0];
+      locationIcon.innerHTML = `<img src="https://openweathermap.org/img/wn/${icon}.png"/>`;
       wind_degrees.innerHTML = response.wind_degrees;
     })
     .catch((err) => console.error(err));
