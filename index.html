@@ -24,9 +24,19 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
+    <nav
+      class="navbar navbar-expand-lg bg-body-tertiary bg-dark"
+      data-bs-theme="dark"
+    >
       <div class="container-fluid">
-        <a class="navbar-brand" href="/"><img src="/assets/logo_white_cropped.png" width="20%" alt="Weather Forecast"> Weather Forecast</a>
+        <a class="navbar-brand" href="/"
+          ><img
+            src="/assets/logo_white_cropped.png"
+            width="20%"
+            alt="Weather Forecast"
+          />
+          Weather Forecast</a
+        >
         <button
           class="navbar-toggler"
           type="button"
@@ -81,137 +91,138 @@
         </div>
       </div>
     </nav>
+    <div class="container-fluid Main_Banner">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-center text-white mt-5">Bad weather always looks worse through a window <br/>~ <small>Tom Lehrer</small></h1>
+        </div>
+      </div>
+    </div>
     <div class="container">
-      <main>
-        <h2 class="my-4 text-center">
-          Weather for <span id="cityName"></span>
-        </h2>
-        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-          <div class="col">
-            <div class="card mb-4 rounded-3 shadow-sm bg-dark text-white">
-              <div class="card-header py-3 border-white">
-                <h4 class="my-0 fw-normal">Tempretures</h4>
-              </div>
-              <div class="card-body">
-                <h1 class="card-title pricing-card-title">
-                  <span id="temp"></span
-                  ><small>°C</small>
-                </h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                  <li>Min Temperature is <span id="min_temp"></span></li>
-                  <li>Max Temperature is <span id="max_temp"></span></li>
-                </ul>
-              </div>
+      <h2 class="my-4 text-center">Weather for <span id="cityName"></span></h2>
+      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm bg-dark text-white">
+            <div class="card-header py-3 border-white">
+              <h4 class="my-0 fw-normal">Tempretures</h4>
             </div>
-          </div>
-          <div class="col">
-            <div class="card mb-4 rounded-3 shadow-sm bg-dark text-white">
-              <div class="card-header py-3 border-white">
-                <h4 class="my-0 fw-normal">Country Info</h4>
-              </div>
-              <div class="card-body">
-                <h1 class="card-title pricing-card-title">
-                  <span id="country"></span
-                  >
-                </h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                  <li>Sunrise is <span id="sunrise"></span></li>
-                  <li>Sunset is <span id="sunset"></span></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card mb-4 rounded-3 shadow-sm bg-dark text-white">
-              <div class="card-header py-3 border-white">
-                <h4 class="my-0 fw-normal">Weather Info</h4>
-              </div>
-              <div class="card-body">
-                <h1 class="card-title pricing-card-title">
-                  <span id="main"></span>
-                  <!-- <span id="icon"></span> -->
-                  <span class="weather-icon"><img src="" /></span>
-                </h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                  <li>Status is <span id="description"></span></li>
-                  <li>Wind is <span id="wind"></span> deg</li>
-                </ul>
-              </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">
+                <span id="temp"></span><small>°C</small>
+              </h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Min Temperature is <span id="min_temp"></span></li>
+                <li>Max Temperature is <span id="max_temp"></span></li>
+              </ul>
             </div>
           </div>
         </div>
-
-        <h2 class="display-6 text-center mb-4">Weather</h2>
-
-        <div class="table-responsive">
-          <table class="table text-center">
-            <thead>
-              <tr>
-                <th style="width: 10%"></th>
-                <th style="width: 10%">Tempreture</th>
-                <th style="width: 10%">Max Temp</th>
-                <th style="width: 10%">Min Temp</th>
-                <th style="width: 10%">Feels Like</th>
-                <th style="width: 10%">longitude</th>
-                <th style="width: 10%">latitude</th>
-                <th style="width: 10%">Sunrise</th>
-                <th style="width: 10%">Sunset</th>
-                <th style="width: 6%">Status</th>
-              </tr> 
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row" class="text-start">California</th>
-                <td><span id="CaliforniaName"></span></td>
-                <td><span id="CaliforniaMax"></span></td>
-                <td><span id="CaliforniaMin"></span></td>
-                <td><span id="CaliforniaFeels"></span></td>
-                <td><span id="Californialon"></span></td>
-                <td><span id="Californialat"></span></td>
-                <td><span id="CaliforniaSunrise"></span></td>
-                <td><span id="CaliforniaSunset"></span></td>
-                <td><span id="CaliforniaIcon"></span></td>
-              </tr>
-              <tr>
-                <th scope="row" class="text-start">Los Angeles</th>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
-                <td>7</td>
-                <td>8</td>
-              </tr>
-            </tbody>
-
-            <tbody>
-              <tr>
-                <th scope="row" class="text-start">San Francisco</th>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
-                <td>7</td>
-                <td>8</td>
-              </tr>
-              <tr>
-                <th scope="row" class="text-start">Texas</th>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
-                <td>7</td>
-                <td>8</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm bg-dark text-white">
+            <div class="card-header py-3 border-white">
+              <h4 class="my-0 fw-normal">Country Info</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">
+                <span id="country"></span>
+              </h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Sunrise is <span id="sunrise"></span></li>
+                <li>Sunset is <span id="sunset"></span></li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </main>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm bg-dark text-white">
+            <div class="card-header py-3 border-white">
+              <h4 class="my-0 fw-normal">Weather Info</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">
+                <span id="main"></span>
+                <!-- <span id="icon"></span> -->
+                <span class="weather-icon"><img src="" /></span>
+              </h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Status is <span id="description"></span></li>
+                <li>Wind is <span id="wind"></span> deg</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="display-6 text-center mb-4">Weather</h2>
+
+      <div class="table-responsive">
+        <table class="table text-center">
+          <thead>
+            <tr>
+              <th style="width: 10%"></th>
+              <th style="width: 10%">Tempreture</th>
+              <th style="width: 10%">Max Temp</th>
+              <th style="width: 10%">Min Temp</th>
+              <th style="width: 10%">Feels Like</th>
+              <th style="width: 10%">longitude</th>
+              <th style="width: 10%">latitude</th>
+              <th style="width: 10%">Sunrise</th>
+              <th style="width: 10%">Sunset</th>
+              <th style="width: 6%">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="text-start">California</th>
+              <td><span id="CaliforniaName"></span></td>
+              <td><span id="CaliforniaMax"></span></td>
+              <td><span id="CaliforniaMin"></span></td>
+              <td><span id="CaliforniaFeels"></span></td>
+              <td><span id="Californialon"></span></td>
+              <td><span id="Californialat"></span></td>
+              <td><span id="CaliforniaSunrise"></span></td>
+              <td><span id="CaliforniaSunset"></span></td>
+              <td><span id="CaliforniaIcon"></span></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">Los Angeles</th>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+            </tr>
+          </tbody>
+
+          <tbody>
+            <tr>
+              <th scope="row" class="text-start">San Francisco</th>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">Texas</th>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"

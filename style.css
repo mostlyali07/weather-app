@@ -5,6 +5,11 @@
 body {
   font-family: "Pink_Chicken";
 }
-#CaliforniaIcon img{
-    width: 44%;
+#CaliforniaIcon img {
+  width: 44%;
+}
+.Main_Banner {
+  background-image: url(/assets/winter6.jpg);
+  height: 40vh;
+  background-size: cover;
 }

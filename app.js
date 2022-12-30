@@ -48,7 +48,6 @@ const California = () => {
       let locationIcon = document.getElementById("CaliforniaIcon");
       const { icon } = response.weather[0];
       locationIcon.innerHTML = `<img src="https://openweathermap.org/img/wn/${icon}.png"/>`;
-      wind.innerHTML = response.wind.deg;
     })
     .catch((err) => console.error(err));
 };
