@@ -78,3 +78,51 @@ const Angeles = () => {
 };
 
 Angeles();
+
+const Francisco = () => {
+  fetch(
+    "https://api.openweathermap.org/data/2.5/weather?q=San Francisco&appid=49da7703b2d50bab507896f3d5b56a7c"
+  )
+    .then((response) => response.json())
+    .then((response) => {
+      FranciscoName.innerHTML = (response.main.temp - 273.15).toFixed(1);
+      FranciscoMax.innerHTML = (response.main.temp_max - 273.15).toFixed(1);
+      FranciscoMin.innerHTML = (response.main.temp_min - 273.15).toFixed(1);
+      FranciscoFeels.innerHTML = (response.main.feels_like - 273.15).toFixed(1);
+      Franciscolon.innerHTML = response.coord.lon;
+      Franciscolat.innerHTML = response.coord.lat;
+      FranciscoSunrise.innerHTML = response.sys.sunrise;
+      FranciscoSunset.innerHTML = response.sys.sunset;
+      main.innerHTML = response.weather[0].main;
+      let locationIcon = document.getElementById("FranciscoIcon");
+      const { icon } = response.weather[0];
+      locationIcon.innerHTML = `<img src="https://openweathermap.org/img/wn/${icon}.png"/>`;
+    })
+    .catch((err) => console.error(err));
+};
+
+Francisco();
+
+const Texas = () => {
+  fetch(
+    "https://api.openweathermap.org/data/2.5/weather?q=Texas&appid=49da7703b2d50bab507896f3d5b56a7c"
+  )
+    .then((response) => response.json())
+    .then((response) => {
+      TexasName.innerHTML = (response.main.temp - 273.15).toFixed(1);
+      TexasMax.innerHTML = (response.main.temp_max - 273.15).toFixed(1);
+      TexasMin.innerHTML = (response.main.temp_min - 273.15).toFixed(1);
+      TexasFeels.innerHTML = (response.main.feels_like - 273.15).toFixed(1);
+      Texaslon.innerHTML = response.coord.lon;
+      Texaslat.innerHTML = response.coord.lat;
+      TexasSunrise.innerHTML = response.sys.sunrise;
+      TexasSunset.innerHTML = response.sys.sunset;
+      main.innerHTML = response.weather[0].main;
+      let locationIcon = document.getElementById("TexasIcon");
+      const { icon } = response.weather[0];
+      locationIcon.innerHTML = `<img src="https://openweathermap.org/img/wn/${icon}.png"/>`;
+    })
+    .catch((err) => console.error(err));
+};
+
+Texas();
