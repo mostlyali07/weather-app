@@ -53,3 +53,28 @@ const California = () => {
 };
 
 California();
+
+
+const Angeles = () => {
+  fetch(
+    "https://api.openweathermap.org/data/2.5/weather?q=los Angeles&appid=49da7703b2d50bab507896f3d5b56a7c"
+  )
+    .then((response) => response.json())
+    .then((response) => {
+      AngelesName.innerHTML = (response.main.temp - 273.15).toFixed(1);
+      AngelesMax.innerHTML = (response.main.temp_max - 273.15).toFixed(1);
+      AngelesMin.innerHTML = (response.main.temp_min - 273.15).toFixed(1);
+      AngelesFeels.innerHTML = (response.main.feels_like - 273.15).toFixed(1);
+      Angeleslon.innerHTML = response.coord.lon;
+      Angeleslat.innerHTML = response.coord.lat;
+      AngelesSunrise.innerHTML = response.sys.sunrise;
+      AngelesSunset.innerHTML = response.sys.sunset;
+      main.innerHTML = response.weather[0].main;
+      let locationIcon = document.getElementById("AngelesIcon");
+      const { icon } = response.weather[0];
+      locationIcon.innerHTML = `<img src="https://openweathermap.org/img/wn/${icon}.png"/>`;
+    })
+    .catch((err) => console.error(err));
+};
+
+Angeles();
