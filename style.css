@@ -13,3 +13,14 @@ body {
   height: 40vh;
   background-size: cover;
 }
+.swal-modal{
+  background-color: #2b3035;
+}
+.swal-title , .swal-text , .swal-button{
+  color: #fff;
+  letter-spacing: 2px;
+}
+.swal-button{
+  color: #000;
+  letter-spacing: 2px;
+}

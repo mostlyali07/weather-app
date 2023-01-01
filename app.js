@@ -1,4 +1,7 @@
 const getWeather = (city) => {
+  if (city == "") {
+    swal("Error!", "Please Enter City!", "error");
+  }
   cityName.innerHTML = city;
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=49da7703b2d50bab507896f3d5b56a7c`
@@ -26,6 +29,7 @@ submit.addEventListener("click", (e) => {
   e.preventDefault();
   getWeather(city.value);
 });
+
 
 getWeather("Karachi");
 
